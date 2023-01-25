@@ -11,7 +11,7 @@ COPY . ./
 RUN poetry install --no-interaction --no-ansi -vvv
 
 FROM python as runtime
-ENV PATH="/app/venv/bin:$PATH"
+ENV PATH="/app/.venv/bin:$PATH"
 COPY --from=poetry /app /app
 EXPOSE 81
-CMD python main.py
+CMD ["python", "/app/main.py"]
