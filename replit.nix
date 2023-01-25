@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.postgresql
     pkgs.python38Full
   ];
   env = {
